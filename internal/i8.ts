@@ -1,4 +1,12 @@
-import {type I18n, defaultLang, writable, type Writable, languageImporter, log} from "../settings";
+import {
+    type I18n,
+    defaultLang,
+    writable,
+    type Writable,
+    languageImporter,
+    log,
+    languageSubscription,
+} from "../settings";
 import {proxify} from "./proxy";
 
 // Helpers
@@ -102,6 +110,7 @@ export const availableLanguages = Object.keys(languages);
  */
 export let language = writable<string>(defaultLang);
 language.subscribe(setLang);
+language.subscribe(languageSubscription);
 
 /**
  * The current language tree.

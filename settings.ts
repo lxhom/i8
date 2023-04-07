@@ -1,5 +1,5 @@
 import type {ProxyAdapters, functionContext} from "./internal/proxy";
-import {type LanguageDict, language} from "./internal/i8";
+import type {LanguageDict} from "./internal/i8";
 
 // Language settings
 
@@ -92,7 +92,7 @@ function plurals({args, before}: functionContext) {
  * This is not hard-coded into the library, as you might want to
  * change the names or disable this behavior.
  */
-language.subscribe((lang_code) => {
+export let languageSubscription = (lang_code: string) => {
     if (typeof window === "undefined") return;
     window.document.cookie = `lang=${lang_code}; path=/;`;
     let url = new URL(window.location.href);
@@ -100,7 +100,7 @@ language.subscribe((lang_code) => {
         url.searchParams.set("lang", lang_code);
         window.history.replaceState({}, "", url.href);
     }
-});
+};
 
 // Inspector
 
