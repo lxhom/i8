@@ -254,6 +254,7 @@ import {setLang} from "$i8";
 export const load: LayoutLoad = (async ({data}) => {
     await setLang(data.lang);
 });
+```
 
 ## License
 
