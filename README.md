@@ -18,7 +18,7 @@ i8 is an internationalization library for TypeScript-based apps.
 
 ## Installation
 
-This is *not* an ordinary TS library. You need to copy this folder directly into your source tree to enable TS support.
+This is *not* an ordinary TS library ([why?](#why-not-on-npm)). You need to copy this folder directly into your source tree to enable TS support.
 
 To install i8, install the following dependencies into your project:
 
@@ -254,3 +254,8 @@ import {setLang} from "$i8";
 export const load: LayoutLoad = (async ({data}) => {
     await setLang(data.lang);
 });
+```
+
+## License
+
+[MIT](https://opensource.org/license/mit/).
